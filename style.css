@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #325;
+}
+.clock{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background: #223;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgba(9, 0, 9, 0.5);
+}
+.number {
+  transform: rotate(calc(30deg * var(--n)));
+  position: absolute;
+  text-align: center;
+  inset: 140px;
+  color: limegreen;
+}
+.number b{
+  transform: rotate(calc(-30deg * var(--n)));
+  display: inline-block;
+  font-size: 40px;
+}
+
+.dt-h{
+  position: absolute;
+  font-size: 55px;
+  
+}
+
+.hr-h, .mn-h, .sc-h{
+  --rotate: 0; 
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%) rotate(calc(var(--rotate)* 1deg));
+  transform-origin: bottom;
+  border-radius: 10px;
+}
+
+.hr-h{
+  width: 12px;
+  height: 130px;
+  background: linear-gradient(80deg, limegreen, black);
+}
+.mn-h {
+  width: 12px;
+  height: 150px;
+  background: linear-gradient(80deg, red, black);
+}
+.sc-h {
+  width: 6px;
+  height: 150px;
+  background: #fff;
+}
+
+
+.loder{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: #324;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading{
+  height: 100px;
+  width: 100px;
+  border: 10px solid #ddd;
+  border-radius: 50%;
+  border-right-color: dodgerblue;
+  animation: anim 1s linear infinite;
+}
+@keyframes anim{
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
+@media (max-width: 852px) {
+  .number{
+    inset: 350px;
+  }
+}
